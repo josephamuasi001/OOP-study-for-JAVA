@@ -1,10 +1,10 @@
 package OOPstudy;
 
-public class Employee {
+class Employee {
     String name;
     double salary;
 
-    Employee(String name, double salary, double bonus) {
+    Employee(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }

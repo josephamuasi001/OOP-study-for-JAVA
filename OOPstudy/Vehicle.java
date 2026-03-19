@@ -1,15 +1,11 @@
 package OOPstudy;
 
-public class Vehicle {
-    double speed;
-
-    void go() {
-        System.out.println("This vehicle is moving");
-
+class Vehicle {
+    String brand;
+    Vehicle(String brand) {
+        this.brand = brand;
     }
-    void stop() {
-        System.out.println("This vehicle is stopped");
-
+    void startEngine() {
+        System.out.println("Vehicle engine has started");
     }
-    
 }
