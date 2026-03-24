@@ -2,8 +2,8 @@ package OOPstudy;
 
 public class Main {
     public static void main(String[] args) {
-        SavingsAccount s1 = new SavingsAccount("AC900U672", "Joseph Amuasi", 2000);
-        s1.addInterest(6);
-        System.out.println("Balance = " + s1.getBalance());
+        Course c1 = new Course("MATH223", "Calculus 2", 98);
+        c1.getRemark();
+        System.out.println("Course code: " + c1.getcourseCode());
     }
 }
