@@ -12,6 +12,6 @@ public class Intern extends Worker {
 
     @Override
     public double calculatePay() {
-        return (hourlyRate * hoursWorked);
+        return baseSalary + (hourlyRate * hoursWorked);
     } 
 }
