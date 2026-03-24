@@ -11,14 +11,14 @@ public class Course {
         this.setMark(marks);
     }
 
-    public void setcourseCode(String courseCode) {
+    public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
-    public void setcourseName(String courseName) {
+    public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
     public void setMark(int marks) {
-        if (marks > 0 && marks <= 100) {
+        if (marks >= 0 && marks <= 100) {
             this.marks = marks;
         } else {
             System.out.println("This is an invalid mark !!! Marks must be in the range(0 - 100)");
@@ -26,11 +26,11 @@ public class Course {
         
     }
 
-    public String getcourseCode() {
+    public String getCourseCode() {
         return this.courseCode;
     }
 
-    public String getcourseName() {
+    public String getCourseName() {
         return this.courseName;
     }
 
