@@ -5,7 +5,7 @@ public class SavingsAccount {
     private String accountHolder;
     private double balance;
 
-    public SavingsAccount(String accountNumber, String countHolder, double balance) {
+    public SavingsAccount(String accountNumber, String accountHolder, double balance) {
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
         this.balance = balance;
@@ -23,18 +23,25 @@ public class SavingsAccount {
     }
 
     public void withdraw(double amount) {
-        if(amount > 0 && amount <= balance + 1) {
+        if(amount > 0 && amount <= balance) {
             balance -= amount;
             System.out.println("You have successfully withdrawn $" + amount + " into your account");
             System.out.print("Your new balance is $" + balance);
         } else {
             System.out.println("Invalid withdrawal amount");
-            System.out.println(:"You cannot withdraw $" + amount);
+            System.out.println("You cannot withdraw $" + amount);
         }
     }
 
     public void addInterest(double rate) {
-        System.out.println("Your interest is " + (rate * balance)) ;
+        double interest = (rate * balance) / 100;
+        if (rate > 0) {
+            balance += interest;
+            System.out.println("Your interest is " + (rate * balance)/ 100) ;
+        } else {
+            System.out.println("Invalid interest rate");
+        }
+        
     }
 
     public double getBalance() {
