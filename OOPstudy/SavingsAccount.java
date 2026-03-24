@@ -34,6 +34,10 @@ public class SavingsAccount {
     }
 
     public void addInterest(double rate) {
-        
+        System.out.println("Your interest is " + (rate * balance)) ;
+    }
+
+    public double getBalance() {
+        return this.balance;
     }
 }
