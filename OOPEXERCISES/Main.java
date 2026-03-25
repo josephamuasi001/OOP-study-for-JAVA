@@ -8,5 +8,6 @@ public class Main {
         System.out.println("Radius: " + c1.radius);
         Rectangle r1 = new Rectangle(9, 10);
         System.out.println("Area of Rectangle: " + r1.calculateArea());
+        System.out.println("Radius ");
     }
 }
