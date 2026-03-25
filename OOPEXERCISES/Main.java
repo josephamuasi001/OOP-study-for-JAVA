@@ -9,5 +9,6 @@ public class Main {
         Rectangle r1 = new Rectangle(9, 10);
         System.out.println("Area of Rectangle: " + r1.calculateArea());
         System.out.println("Length " + r1.length);
+        System.out.println("Width");
     }
 }
