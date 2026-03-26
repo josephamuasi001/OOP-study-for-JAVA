@@ -10,5 +10,7 @@ public class Main {
         System.out.println("Area of Rectangle: " + r1.calculateArea());
         System.out.println("Length " + r1.length);
         System.out.println("Width" + r1.width);
+        Football f1 = new Football("Soccer");
+        f1.play();
     }
 }
