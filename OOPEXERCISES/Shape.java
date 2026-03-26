@@ -1,7 +1,5 @@
 package OOPEXERCISES;
 
 abstract class Shape {
-    float calculateArea(){
-    return 0;
-    }
+    abstract double calculateArea();
 }
