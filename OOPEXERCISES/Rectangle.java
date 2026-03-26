@@ -1,15 +1,15 @@
 package OOPEXERCISES;
 
 public class Rectangle extends Shape{
-    float length;
-    float width;
-    Rectangle(float length, float width) {
+    double length;
+    double width;
+    Rectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
 
     @Override
-    float calculateArea() {
+    double calculateArea() {
         return length * width;
     }
 }
