@@ -10,5 +10,6 @@ public class Main {
         for(Animal animal : animals) {
             animal.makeSound();
         }
+    
     }
 }
