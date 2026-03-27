@@ -5,20 +5,20 @@ class BankAccount {
     private $balance;
 
     public function __construct($balance) {
-        $this->balance = $balance;
+        $this->balance = 0;
     }
 
     public function deposit($amount) {
         if ($amount > 0) {
             $this->balance += $amount;
-            echo "You have recieved $$amount";
+            echo "You have recieved $" . $amount;
         } else {
             echo "Invalid deposit amount";
         }
     }
 
     public function withdraw($amount) {
-        if($amount > 0 && $amount < $this->balance) {
+        if($amount > 0 && $amount <= $this->balance) {
             $this->balance -= $amount;
             echo "You have withrawn $$amount" . "<br>";
         } else {
@@ -30,8 +30,6 @@ class BankAccount {
         return $this->balance;
     }
 }
-
-require_once "BankAccount.php";
 
 $b1 = new BankAccount(0);
 
