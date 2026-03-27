@@ -4,14 +4,15 @@ class Student {
     private $grade;
 
     public function __construct($name, $grade) {
-        
+        $this->setName($name);
+        $this->setGrade($grade);
     }
 
     public function setName($name) {
-        if ($name != NULL) {
+        if (!empty($name)) {
             $this->name = $name;
         } else {
-            echo "Invalid name";
+            echo "Invalid name<br>";
         }
     }
 
@@ -20,10 +21,10 @@ class Student {
     }
 
     public function setGrade($grade) {
-        if($grade >= 0 && $grade <= 100) {
+        if ($grade >= 0 && $grade <= 100) {
             $this->grade = $grade;
         } else {
-            echo "Invalid grade";
+            echo "Invalid grade<br>";
         }
     }
 
@@ -32,14 +33,10 @@ class Student {
     }
 }
 
-
-
-$student1 = new Student("Josepn", 90);
-
-$student1->getName();
-$student1->getGrade();
-
+$student1 = new Student("Joseph", 90);
+echo "Name: " . $student1->getName() . "<br>";
+echo "Grade: " . $student1->getGrade() . "<br>";
 
 $student2 = new Student("", 899);
-$student2->getName();
-$student2->getGrade();
+echo "Name: " . $student2->getName() . "<br>";
+echo "Grade: " . $student2->getGrade() . "<br>";
