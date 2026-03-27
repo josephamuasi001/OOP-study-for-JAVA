@@ -5,5 +5,7 @@ public class Main {
         Account ac1 = new Account("Joseph", 90);
         ac1.deposit(90);
         ac1.getBalance();
+        Student s1 = new Student("Joseph", 90);
+        System.out.println("Grade: " + s1.getGrade());
     }
 }
