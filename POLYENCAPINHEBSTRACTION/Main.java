@@ -5,6 +5,10 @@ public class Main {
         Dog d1 = new Dog();
         Cat c1 = new Cat();
 
-        Animal[] animals = (d1, c1);
+        Animal[] animals = {d1, c1};
+
+        for(Animal animal : animals) {
+            animal.makeSound();
+        }
     }
 }
