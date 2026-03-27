@@ -11,7 +11,7 @@ class BankAccount {
     public function deposit($amount) {
         if ($amount > 0) {
             $this->balance += $amount;
-            echo "You have recieved $" . $amount;
+            echo "You have recieved $$amount";
         } else {
             echo "Invalid deposit amount";
         }
