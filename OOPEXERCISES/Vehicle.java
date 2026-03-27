@@ -2,6 +2,6 @@ package OOPEXERCISES;
 
 public class Vehicle {
     void start() {
-        System.out.println("Your vehicle engine" + type + "has started");
+        System.out.println("Your vehicle engine has started");
     }
 }

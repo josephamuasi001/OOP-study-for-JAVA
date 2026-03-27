@@ -10,7 +10,7 @@ public class Account {
     } 
 
     public double getBalance() {
-        return this.balance = balance;
+        return this.balance;
     }
 
     public void deposit(double amount) {
