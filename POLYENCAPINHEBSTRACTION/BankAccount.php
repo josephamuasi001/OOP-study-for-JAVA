@@ -25,7 +25,7 @@ class BankAccount {
             echo "Insufficient funds / Invalid withdrawal amount";
         }
     }
-
+    //Get balance
     public function getBalance() {
         return $this->balance;
     }
