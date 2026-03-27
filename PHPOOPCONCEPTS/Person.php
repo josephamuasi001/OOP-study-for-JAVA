@@ -13,6 +13,5 @@ class Person {
 }
 
 
-$p1 = new Person();
 $p1->setName("Joseph");
 echo "Name: " . $p1->getName();
