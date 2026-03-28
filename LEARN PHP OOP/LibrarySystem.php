@@ -4,12 +4,7 @@
         $this->cart[] = $book;
     }
 
-    public function removeFromCart($bookId) {
-        $this->cart = array_filter($this->cart, fn($book) => $book->id !== $bookId);
-    }
-
-    public function viewCart() {
-        return $this->cart;
+   
     }
 }
 
