@@ -2,12 +2,7 @@
 
 
 
-class AmbassadorJosephLibrarySystem {
-    private $books = [];
-    private $students = [];
 
-    public function addBook($book) {
-        $this->books[$book->id] = $book;
     }
 
     public function registerStudent($student) {
