@@ -1,12 +1,6 @@
 <?php
 
-    public function addToCart($book) {
-        $this->cart[] = $book;
-    }
 
-   
-    }
-}
 
 class AmbassadorJosephLibrarySystem {
     private $books = [];
