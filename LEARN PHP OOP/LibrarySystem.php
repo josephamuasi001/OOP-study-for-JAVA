@@ -1,16 +1,4 @@
 <?php
-class Student {
-    public $studentId;
-    public $name;
-    public $email;
-    public $cart = [];
-    public $borrowedBooks = [];
-
-    public function __construct($studentId, $name, $email) {
-        $this->studentId = $studentId;
-        $this->name = $name;
-        $this->email = $email;
-    }
 
     public function addToCart($book) {
         $this->cart[] = $book;
