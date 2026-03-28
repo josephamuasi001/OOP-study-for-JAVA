@@ -1,22 +1,4 @@
 <?php
-class Book {
-    public $id;
-    public $title;
-    public $author;
-    public $isbn;
-    public $available;
-    public $isOnline;
-
-    public function __construct($id, $title, $author, $isbn, $available = true, $isOnline = false) {
-        $this->id = $id;
-        $this->title = $title;
-        $this->author = $author;
-        $this->isbn = $isbn;
-        $this->available = $available;
-        $this->isOnline = $isOnline;
-    }
-}
-
 class Student {
     public $studentId;
     public $name;
