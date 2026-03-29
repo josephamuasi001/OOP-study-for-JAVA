@@ -11,11 +11,6 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <header>
-                <h1>📚 Ambassador Joseph Library System</h1>
-                <p>Your Digital Library Management Platform</p>
-            </header>
 
             <div class="nav-tabs">
                 <button class="active" onclick="showSection('books')">Browse Books</button>
