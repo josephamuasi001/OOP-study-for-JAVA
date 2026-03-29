@@ -283,6 +283,16 @@ elseif ($action === 'game') {
                 <button type="submit">Submit Guess</button>
             </form>
         </div>
+
+        <script>
+            function playSound(text) {
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.rate = 1;
+                    speechSynthesis.speak(utterance);
+                }
+            }
+        </script>
     </body>
     </html>
     <?php
@@ -383,6 +393,20 @@ elseif ($action === 'results') {
 
             <a href="?action=select">Play Again</a>
         </div>
+
+        <script>
+            function playSound(text) {
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.rate = 1;
+                    speechSynthesis.speak(utterance);
+                }
+            }
+
+            window.onload = function() {
+                playSound('<?= $result === 'win' ? 'Well done! You won!' : 'Game over! Better luck next time.' ?>');
+            };
+        </script>
     </body>
     </html>
     <?php
