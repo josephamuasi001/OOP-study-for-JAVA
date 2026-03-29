@@ -14,15 +14,6 @@
 
 
         
-            <div id="cart" class="section">
-                <h2>Shopping Cart</h2>
-                <div id="cartContainer"></div>
-            </div>
-
-            <div id="borrowed" class="section">
-                <h2>My Borrowed Books</h2>
-                <div id="borrowedContainer"></div>
-            </div>
 
             <div id="message" class="status" style="display:none;"></div>
         </div>
