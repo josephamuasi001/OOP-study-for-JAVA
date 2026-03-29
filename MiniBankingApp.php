@@ -1,118 +1,180 @@
 <?php
+session_start();
 
 class Bank {
     private $conn;
-    private $loggedInUser = null;
 
-    public function __construct($servername, $username, $dbusername, $password, $dbname) {
-        $this->conn = new mysqli($servername, $dbusername, $password, $dbname);
+    public function __construct() {
+        $this->conn = new mysqli("localhost", "root", "", "banking_db");
+
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
     }
 
     public function createAccount($username, $password, $initialBalance = 0) {
-        $stmt = $this->conn->prepare("SELECT username FROM accounts WHERE username = ?");
-        $stmt->bind_param("s", $username);
+        $stmt = $this->conn->prepare("SELECT username FROM accounts WHERE username=?");
+        $stmt->bind_param("s",$username);
         $stmt->execute();
-        if ($stmt->get_result()->num_rows > 0) {
+
+        if($stmt->get_result()->num_rows > 0){
             return "Account already exists!";
         }
+
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $createdAt = date('Y-m-d H:i:s');
-        $stmt = $this->conn->prepare("INSERT INTO accounts (username, password, balance, createdAt) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssds", $username, $hashedPassword, $initialBalance, $createdAt);
+        $createdAt = date("Y-m-d H:i:s");
+
+        $stmt = $this->conn->prepare("INSERT INTO accounts(username,password,balance,createdAt) VALUES(?,?,?,?)");
+        $stmt->bind_param("ssds",$username,$hashedPassword,$initialBalance,$createdAt);
+
         return $stmt->execute() ? "Account created successfully!" : "Error creating account!";
     }
 
-    public function login($username, $password) {
-        $stmt = $this->conn->prepare("SELECT password FROM accounts WHERE username = ?");
-        $stmt->bind_param("s", $username);
+    public function login($username,$password){
+        $stmt = $this->conn->prepare("SELECT password FROM accounts WHERE username=?");
+        $stmt->bind_param("s",$username);
         $stmt->execute();
+
         $result = $stmt->get_result();
-        if ($result->num_rows === 0) return "Account not found!";
+
+        if($result->num_rows == 0){
+            return "Account not found!";
+        }
+
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $this->loggedInUser = $username;
+
+        if(password_verify($password,$row['password'])){
+            $_SESSION['user'] = $username;
             return "Login successful!";
         }
+
         return "Invalid password!";
     }
 
-    public function logout() {
-        $this->loggedInUser = null;
-        return "Logged out successfully!";
-    }
-
-    public function checkBalance() {
-        if (!$this->loggedInUser) return "Please login first!";
-        $stmt = $this->conn->prepare("SELECT balance FROM accounts WHERE username = ?");
-        $stmt->bind_param("s", $this->loggedInUser);
+    public function checkBalance(){
+        $stmt = $this->conn->prepare("SELECT balance FROM accounts WHERE username=?");
+        $stmt->bind_param("s",$_SESSION['user']);
         $stmt->execute();
+
         return $stmt->get_result()->fetch_assoc()['balance'];
     }
 
-    public function deposit($amount) {
-        if (!$this->loggedInUser) return "Please login first!";
-        if ($amount <= 0) return "Invalid amount!";
-        $stmt = $this->conn->prepare("UPDATE accounts SET balance = balance + ? WHERE username = ?");
-        $stmt->bind_param("ds", $amount, $this->loggedInUser);
-        return $stmt->execute() ? "Deposit successful! New balance: " . $this->checkBalance() : "Error!";
+    public function deposit($amount){
+        $stmt = $this->conn->prepare("UPDATE accounts SET balance = balance + ? WHERE username=?");
+        $stmt->bind_param("ds",$amount,$_SESSION['user']);
+
+        return $stmt->execute();
     }
 
-    public function withdraw($amount) {
-        if (!$this->loggedInUser) return "Please login first!";
-        if ($amount <= 0) return "Invalid amount!";
-        if ($amount > $this->checkBalance()) return "Insufficient balance!";
-        $stmt = $this->conn->prepare("UPDATE accounts SET balance = balance - ? WHERE username = ?");
-        $stmt->bind_param("ds", $amount, $this->loggedInUser);
-        return $stmt->execute() ? "Withdrawal successful! New balance: " . $this->checkBalance() : "Error!";
-    }
+    public function withdraw($amount){
 
-    public function transfer($recipientUsername, $amount) {
-        if (!$this->loggedInUser) return "Please login first!";
-        if ($amount <= 0) return "Invalid amount!";
-        if ($amount > $this->checkBalance()) return "Insufficient balance!";
-        $stmt = $this->conn->prepare("SELECT username FROM accounts WHERE username = ?");
-        $stmt->bind_param("s", $recipientUsername);
-        $stmt->execute();
-        if ($stmt->get_result()->num_rows === 0) return "Recipient not found!";
-        
-        $this->conn->begin_transaction();
-        $stmt1 = $this->conn->prepare("UPDATE accounts SET balance = balance - ? WHERE username = ?");
-        $stmt1->bind_param("ds", $amount, $this->loggedInUser);
-        $stmt2 = $this->conn->prepare("UPDATE accounts SET balance = balance + ? WHERE username = ?");
-        $stmt2->bind_param("ds", $amount, $recipientUsername);
-        if ($stmt1->execute() && $stmt2->execute()) {
-            $this->conn->commit();
-            return "Transfer successful!";
+        $balance = $this->checkBalance();
+
+        if($amount > $balance){
+            return "Insufficient balance!";
         }
-        $this->conn->rollback();
-        return "Transfer failed!";
-    }
 
-    public function getAccountDetails() {
-        if (!$this->loggedInUser) return "Please login first!";
-        $stmt = $this->conn->prepare("SELECT * FROM accounts WHERE username = ?");
-        $stmt->bind_param("s", $this->loggedInUser);
-        $stmt->execute();
-        return $stmt->get_result()->fetch_assoc();
-    }
+        $stmt = $this->conn->prepare("UPDATE accounts SET balance = balance - ? WHERE username=?");
+        $stmt->bind_param("ds",$amount,$_SESSION['user']);
 
-    public function changePassword($oldPassword, $newPassword) {
-        if (!$this->loggedInUser) return "Please login first!";
-        $stmt = $this->conn->prepare("SELECT password FROM accounts WHERE username = ?");
-        $stmt->bind_param("s", $this->loggedInUser);
-        $stmt->execute();
-        $row = $stmt->get_result()->fetch_assoc();
-        if (!password_verify($oldPassword, $row['password'])) return "Old password is incorrect!";
-        $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
-        $stmt = $this->conn->prepare("UPDATE accounts SET password = ? WHERE username = ?");
-        $stmt->bind_param("ss", $hashedPassword, $this->loggedInUser);
-        return $stmt->execute() ? "Password changed successfully!" : "Error!";
+        return $stmt->execute();
     }
 }
 
-// Usage
-$bank = new Bank('localhost', 'root', 'root', '', 'banking_db');
+$bank = new Bank();
+$message = "";
+
+if(isset($_POST['register'])){
+    $message = $bank->createAccount($_POST['username'],$_POST['password'],$_POST['balance']);
+}
+
+if(isset($_POST['login'])){
+    $message = $bank->login($_POST['username'],$_POST['password']);
+}
+
+if(isset($_POST['deposit'])){
+    $bank->deposit($_POST['amount']);
+}
+
+if(isset($_POST['withdraw'])){
+    $message = $bank->withdraw($_POST['amount']);
+}
+
+if(isset($_POST['logout'])){
+    session_destroy();
+    header("Refresh:0");
+}
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mini Banking App</title>
+</head>
+<body>
+
+<h1>Mini Banking App</h1>
+
+<?php echo $message; ?>
+
+<?php if(!isset($_SESSION['user'])) { ?>
+
+<h2>Register</h2>
+
+<form method="POST">
+Username<br>
+<input type="text" name="username" required><br><br>
+
+Password<br>
+<input type="password" name="password" required><br><br>
+
+Initial Balance<br>
+<input type="number" name="balance"><br><br>
+
+<button name="register">Create Account</button>
+</form>
+
+<hr>
+
+<h2>Login</h2>
+
+<form method="POST">
+Username<br>
+<input type="text" name="username" required><br><br>
+
+Password<br>
+<input type="password" name="password" required><br><br>
+
+<button name="login">Login</button>
+</form>
+
+<?php } else { ?>
+
+<h2>Welcome <?php echo $_SESSION['user']; ?></h2>
+
+<p>Balance: <?php echo $bank->checkBalance(); ?></p>
+
+<h3>Deposit</h3>
+
+<form method="POST">
+<input type="number" name="amount" required>
+<button name="deposit">Deposit</button>
+</form>
+
+<h3>Withdraw</h3>
+
+<form method="POST">
+<input type="number" name="amount" required>
+<button name="withdraw">Withdraw</button>
+</form>
+
+<br>
+
+<form method="POST">
+<button name="logout">Logout</button>
+</form>
+
+<?php } ?>
+
+</body>
+</html>
