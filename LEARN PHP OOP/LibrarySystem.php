@@ -13,14 +13,7 @@
     <body>
 
 
-            <div id="books" class="section active">
-                <h2>Browse Books</h2>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search by title or author..." onkeyup="filterBooks()">
-                </div>
-                <div id="booksContainer" class="book-grid"></div>
-            </div>
-
+        
             <div id="cart" class="section">
                 <h2>Shopping Cart</h2>
                 <div id="cartContainer"></div>
