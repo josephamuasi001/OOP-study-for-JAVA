@@ -20,6 +20,13 @@ function getCartTotal($cart) {
 }
 
 function removeFromCart(&$cart, $productId) {
+    for ($i = 0; $i < count($cart); $i++) {
+        if ($cart[$i]['id'] == $productId) {
+            unset($cart[$i]);
+            break;
+        }
+    }
+}
 
 // Product Class
 class Product {
@@ -94,9 +101,3 @@ class Order {
     public function getStatus() { return $this->status; }
     public function setStatus($status) { $this->status = $status; }
 }
-?>
-           
-    
-
-
-        
