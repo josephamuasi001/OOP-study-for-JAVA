@@ -8,9 +8,7 @@
         <title>Ambassador Joseph Library System</title>
         <style>
            
-        </style>
-    </head>
-    <body>
+    
 
 
         
