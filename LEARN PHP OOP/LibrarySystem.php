@@ -1,22 +1,4 @@
 <?php
-
-
-
-
-    }
-
-    public function registerStudent($student) {
-        $this->students[$student->studentId] = $student;
-    }
-
-        public function searchBooks($query) {
-            return array_filter($this->books, fn($book) => 
-                stripos($book->title, $query) !== false || 
-                stripos($book->author, $query) !== false
-            );
-        }
-    }
-    
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -107,36 +89,4 @@
         </script>
     </body>
     </html>
-        if (!isset($this->books[$bookId]) || !$this->books[$bookId]->available) {
-            return "Book not available";
-        }
-        
-        $this->books[$bookId]->available = false;
-        $this->students[$studentId]->borrowedBooks[] = $this->books[$bookId];
-        return "Book borrowed successfully";
-    }
-
-    public function returnBook($studentId, $bookId) {
-        $this->books[$bookId]->available = true;
-        $this->students[$studentId]->borrowedBooks = array_filter(
-            $this->students[$studentId]->borrowedBooks,
-            fn($book) => $book->id !== $bookId
-        );
-        return "Book returned successfully";
-    }
-
-    public function accessOnlineBook($studentId, $bookId) {
-        if (!isset($this->books[$bookId]) || !$this->books[$bookId]->isOnline) {
-            return "Online book not found";
-        }
-        return "Accessing online book: " . $this->books[$bookId]->title;
-    }
-
-    public function viewStudentCart($studentId) {
-        return $this->students[$studentId]->viewCart();
-    }
-
-    public function getAllBooks() {
-        return $this->books;
-    }
-}
+ 
