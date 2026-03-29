@@ -15,17 +15,6 @@
 
         
 
-            <div id="message" class="status" style="display:none;"></div>
-        </div>
-
-        <script>
-            function showSection(id) {
-                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-                document.querySelectorAll('.nav-tabs button').forEach(b => b.classList.remove('active'));
-                document.getElementById(id).classList.add('active');
-                event.target.classList.add('active');
-            }
-
             function showMessage(text, type) {
                 const msg = document.getElementById('message');
                 msg.textContent = text;
