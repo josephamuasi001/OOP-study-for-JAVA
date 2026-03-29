@@ -14,20 +14,3 @@
 
 
         
-
-            function showMessage(text, type) {
-                const msg = document.getElementById('message');
-                msg.textContent = text;
-                msg.className = `status ${type}`;
-                msg.style.display = 'block';
-                setTimeout(() => msg.style.display = 'none', 3000);
-            }
-
-            function filterBooks() {
-                const query = document.getElementById('searchInput').value;
-                // Connect to PHP backend for search
-            }
-        </script>
-    </body>
-    </html>
- 
