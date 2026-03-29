@@ -1,0 +1,16 @@
+{
+    "Joseph": {
+        "password": "$2y$10$.4QF2gA9AK09Yg2DOhYJ..\/of8svOWQX34PSYV1yBPfQoPPRgfoFS",
+        "level": 4,
+        "experience": 160,
+        "games_won": 3,
+        "games_played": 4
+    },
+    "Kwame": {
+        "password": "$2y$10$URJddZWj29X9jS12sr3rjebRVI.XfyTCU7Lr5WsabrhCLtiWx5Cgq",
+        "level": 6,
+        "experience": 260,
+        "games_won": 5,
+        "games_played": 6
+    }
+}
