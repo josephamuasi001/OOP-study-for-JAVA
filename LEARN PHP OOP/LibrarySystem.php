@@ -12,11 +12,6 @@
     </head>
     <body>
 
-            <div class="nav-tabs">
-                <button class="active" onclick="showSection('books')">Browse Books</button>
-                <button onclick="showSection('cart')">My Cart</button>
-                <button onclick="showSection('borrowed')">Borrowed Books</button>
-            </div>
 
             <div id="books" class="section active">
                 <h2>Browse Books</h2>
