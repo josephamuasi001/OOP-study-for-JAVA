@@ -448,30 +448,3 @@ class Database {
         } catch (PDOException $e) {
             echo 'Connection Error: ' . $e->getMessage();
             return null;
-        }
-    }
-}
-
-// Initialize Database Connection
-$db = new Database();
-$conn = $db->connect();
-
-// Handle Routes
-$action = isset($_GET['action']) ? $_GET['action'] : 'home';
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Store</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; }
-        header { background: #333; color: white; padding: 20px; text-align: center; }
-        nav { background: #444; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        container { max-width: 1200px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
