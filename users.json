@@ -12,5 +12,12 @@
         "experience": 260,
         "games_won": 5,
         "games_played": 6
+    },
+    "Isaac": {
+        "password": "$2y$10$.JMfkeruqaGF8xOe.8MPRuRI7QidhMAfBXY2s.qy69itpjrYhOdFG",
+        "level": 4,
+        "experience": 160,
+        "games_won": 3,
+        "games_played": 4
     }
 }

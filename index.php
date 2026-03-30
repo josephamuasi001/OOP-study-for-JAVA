@@ -131,6 +131,23 @@ if ($action === 'login') {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+            body::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+                background-size: 50px 50px;
+                animation: float 20s linear infinite;
+            }
+            @keyframes float {
+                0% { transform: translate(0, 0); }
+                100% { transform: translate(50px, 50px); }
             }
             .container { 
                 background: rgba(255, 255, 255, 0.95);
@@ -139,16 +156,48 @@ if ($action === 'login') {
                 box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
                 max-width: 400px;
                 width: 90%;
+                position: relative;
+                z-index: 1;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                animation: slideUp 0.6s ease-out;
             }
-            h1 { color: #667eea; margin-bottom: 30px; text-align: center; }
+            @keyframes slideUp {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            h1 { 
+                color: #667eea; 
+                margin-bottom: 30px; 
+                text-align: center; 
+                font-size: 2.2em;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
             .form-group { margin: 20px 0; }
-            label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+            label { 
+                display: block; 
+                margin-bottom: 8px; 
+                font-weight: 600; 
+                color: #333;
+                text-transform: uppercase;
+                font-size: 0.85em;
+                letter-spacing: 1px;
+            }
             input { 
-                padding: 12px;
+                padding: 14px;
                 width: 100%;
-                border: 2px solid #667eea;
+                border: 2px solid #e0e0e0;
                 border-radius: 10px;
                 font-size: 1em;
+                transition: all 0.3s ease;
+                background: #f9f9f9;
+            }
+            input:focus {
+                outline: none;
+                border-color: #667eea;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                background: white;
+                transform: translateY(-2px);
             }
             button { 
                 width: 100%;
@@ -161,10 +210,58 @@ if ($action === 'login') {
                 font-size: 1.1em;
                 font-weight: 600;
                 margin-top: 20px;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
             }
-            .error { color: #dc3545; margin-top: 10px; }
-            .register-link { text-align: center; margin-top: 20px; }
-            .register-link a { color: #667eea; text-decoration: none; }
+            button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            }
+            button:active {
+                transform: translateY(0);
+            }
+            .error { 
+                color: #dc3545; 
+                margin-top: 15px;
+                padding: 12px;
+                background: #ffe6e6;
+                border-left: 4px solid #dc3545;
+                border-radius: 5px;
+                animation: shake 0.5s ease-in-out;
+            }
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            .register-link { 
+                text-align: center; 
+                margin-top: 25px;
+                padding-top: 20px;
+                border-top: 2px solid #e0e0e0;
+            }
+            .register-link a { 
+                color: #667eea; 
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            .register-link a::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #667eea;
+                transition: width 0.3s ease;
+            }
+            .register-link a:hover::after {
+                width: 100%;
+            }
         </style>
     </head>
     <body>
