@@ -656,13 +656,4 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
                 break;
                 
             default:
-                echo "<p>Page not found</p>";
-        }
-        ?>
-    </container>
-    
-    <footer>
-        <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+  
