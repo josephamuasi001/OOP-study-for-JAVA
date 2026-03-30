@@ -452,4 +452,217 @@ class Database {
     }
 }
 
+// Initialize Database Connection
+$db = new Database();
+$conn = $db->connect();
+
+// Handle Routes
+$action = isset($_GET['action']) ? $_GET['action'] : 'home';
+
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        header { background: #333; color: white; padding: 20px; text-align: center; }
+        nav { background: #444; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        container { max-width: 1200px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .product { border: 1px solid #ddd; padding: 15px; border-radius: 5px; text-align: center; }
+        .product img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
+        .product h3 { margin: 10px 0; }
+        .product p { color: #666; font-size: 14px; }
+        .price { font-size: 20px; font-weight: bold; color: #27ae60; margin: 10px 0; }
+        .btn { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .btn:hover { background: #2980b9; }
+        form { max-width: 400px; margin: 20px auto; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        .cart-item { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd; }
+        .success { color: green; margin: 10px 0; }
+        .error { color: red; margin: 10px 0; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛍️ E-Commerce Store</h1>
+    </header>
+    
+    <nav>
+        <a href="?action=home">Home</a>
+        <a href="?action=products">Products</a>
+        <a href="?action=cart">Cart</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="?action=orders">My Orders</a>
+            <a href="?action=logout">Logout (<?php echo $_SESSION['username']; ?>)</a>
+        <?php else: ?>
+            <a href="?action=login">Login</a>
+            <a href="?action=register">Register</a>
+        <?php endif; ?>
+    </nav>
+    
+    <container>
+        <?php
+        switch ($action) {
+            case 'home':
+                echo "<h2>Welcome to E-Commerce Store</h2>";
+                echo "<p>Browse our products and add items to your cart!</p>";
+                if (isset($_SESSION['user_id'])) {
+                    echo "<p>Welcome back, " . htmlspecialchars($_SESSION['username']) . "!</p>";
+                }
+                break;
+                
+            case 'products':
+                $product = new Product($conn);
+                $products = $product->getAllProducts();
+                echo "<h2>All Products</h2>";
+                echo "<div class='product-grid'>";
+                foreach ($products as $prod) {
+                    echo "<div class='product'>";
+                    echo "<h3>" . htmlspecialchars($prod['name']) . "</h3>";
+                    echo "<p>" . htmlspecialchars($prod['description']) . "</p>";
+                    echo "<p>Category: " . htmlspecialchars($prod['category']) . "</p>";
+                    echo "<p class='price'>$" . number_format($prod['price'], 2) . "</p>";
+                    echo "<p>Stock: " . $prod['stock'] . "</p>";
+                    if (isset($_SESSION['user_id'])) {
+                        echo "<form method='POST'>";
+                        echo "<input type='hidden' name='product_id' value='" . $prod['id'] . "'>";
+                        echo "<input type='number' name='quantity' value='1' min='1' max='" . $prod['stock'] . "'>";
+                        echo "<button type='submit' name='add_to_cart' class='btn'>Add to Cart</button>";
+                        echo "</form>";
+                    } else {
+                        echo "<p class='error'>Login to add items</p>";
+                    }
+                    echo "</div>";
+                }
+                echo "</div>";
+                break;
+                
+            case 'cart':
+                if (!isset($_SESSION['user_id'])) {
+                    echo "<p class='error'>Please login to view your cart</p>";
+                    break;
+                }
+                
+                if (isset($_POST['add_to_cart'])) {
+                    $cart = new Cart($conn);
+                    $cart->user_id = $_SESSION['user_id'];
+                    $cart->product_id = $_POST['product_id'];
+                    $cart->quantity = $_POST['quantity'];
+                    if ($cart->addToCart()) {
+                        echo "<p class='success'>Item added to cart!</p>";
+                    }
+                }
+                
+                $cart = new Cart($conn);
+                $items = $cart->getCartItems($_SESSION['user_id']);
+                $total = $cart->getCartTotal($_SESSION['user_id']);
+                
+                echo "<h2>Shopping Cart</h2>";
+                if (empty($items)) {
+                    echo "<p>Your cart is empty</p>";
+                } else {
+                    foreach ($items as $item) {
+                        echo "<div class='cart-item'>";
+                        echo "<span>" . htmlspecialchars($item['name']) . " x" . $item['quantity'] . "</span>";
+                        echo "<span>$" . number_format($item['subtotal'], 2) . "</span>";
+                        echo "</div>";
+                    }
+                    echo "<h3>Total: $" . number_format($total, 2) . "</h3>";
+                    echo "<form method='POST'>";
+                    echo "<button type='submit' name='checkout' class='btn'>Proceed to Checkout</button>";
+                    echo "</form>";
+                }
+                break;
+                
+            case 'login':
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
+                    $user = new User($conn);
+                    $user->email = $_POST['email'];
+                    $user->password = $_POST['password'];
+                    
+                    if ($user->login()) {
+                        $_SESSION['user_id'] = $user->id;
+                        $_SESSION['username'] = $user->username;
+                        echo "<p class='success'>Login successful! Redirecting...</p>";
+                        echo "<script>setTimeout(function() { window.location.href='?action=products'; }, 1000);</script>";
+                    } else {
+                        echo "<p class='error'>Invalid email or password</p>";
+                    }
+                }
+                echo "<h2>Login</h2>";
+                echo "<form method='POST'>";
+                echo "<input type='email' name='email' placeholder='Email' required>";
+                echo "<input type='password' name='password' placeholder='Password' required>";
+                echo "<button type='submit' name='login' class='btn'>Login</button>";
+                echo "</form>";
+                break;
+                
+            case 'register':
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+                    $user = new User($conn);
+                    $user->username = $_POST['username'];
+                    $user->email = $_POST['email'];
+                    $user->password = $_POST['password'];
+                    
+                    if ($user->register()) {
+                        echo "<p class='success'>Registration successful! <a href='?action=login'>Login here</a></p>";
+                    } else {
+                        echo "<p class='error'>Registration failed. Email may already exist.</p>";
+                    }
+                }
+                echo "<h2>Register</h2>";
+                echo "<form method='POST'>";
+                echo "<input type='text' name='username' placeholder='Username' required>";
+                echo "<input type='email' name='email' placeholder='Email' required>";
+                echo "<input type='password' name='password' placeholder='Password' required>";
+                echo "<button type='submit' name='register' class='btn'>Register</button>";
+                echo "</form>";
+                break;
+                
+            case 'orders':
+                if (!isset($_SESSION['user_id'])) {
+                    echo "<p class='error'>Please login to view orders</p>";
+                    break;
+                }
+                $order = new Order($conn);
+                $orders = $order->getUserOrders($_SESSION['user_id']);
+                echo "<h2>My Orders</h2>";
+                if (empty($orders)) {
+                    echo "<p>You have no orders yet</p>";
+                } else {
+                    foreach ($orders as $ord) {
+                        echo "<div style='border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;'>";
+                        echo "<h3>Order #" . $ord['id'] . "</h3>";
+                        echo "<p>Amount: $" . number_format($ord['total_amount'], 2) . "</p>";
+                        echo "<p>Status: " . htmlspecialchars($ord['status']) . "</p>";
+                        echo "<p>Date: " . $ord['created_at'] . "</p>";
+                        echo "</div>";
+                    }
+                }
+                break;
+                
+            case 'logout':
+                session_destroy();
+                echo "<p class='success'>You have been logged out. Redirecting...</p>";
+                echo "<script>setTimeout(function() { window.location.href='?action=home'; }, 1000);</script>";
+                break;
+                
+            default:
+                echo "<p>Page not found</p>";
+        }
+        ?>
+    </container>
+    
+    <footer>
+        <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
