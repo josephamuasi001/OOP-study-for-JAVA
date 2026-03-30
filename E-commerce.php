@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Database Configuration
 define('DB_HOST', 'localhost');
