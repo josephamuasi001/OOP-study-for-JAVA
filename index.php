@@ -97,7 +97,7 @@ class NumberGuessingGame {
         usort($users, function($a, $b) {
             return $b['level'] <=> $a['level'] ?: $b['experience'] <=> $a['experience'];
         });
-        return array_slice($users, 0, 10);
+        return $users;
     }
 }
 
