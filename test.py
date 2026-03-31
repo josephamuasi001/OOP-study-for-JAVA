@@ -1,95 +1,117 @@
-# 1. Even/Odd number Investigation
+# 1. EVEN / ODD NUMBER SIMULATOR
 while True:
-    print("EVEN/ODD NUMBER SIMULATOR")
-    print("1.Check number parity")
-    print("2.Exit")
+    print("\nEVEN/ODD NUMBER SIMULATOR")
+    print("1. Check number parity")
+    print("2. Exit")
 
-    choice = int(input("Select an option : "))
+    try:
+        choice = int(input("Select an option: "))
 
-    if choice == 1:
-        number = int(input("Enter a number: "))
+        if choice == 1:
+            number = int(input("Enter a number: "))
 
-        if number % 2 == 0 :
-            print("Even number")
+            if number % 2 == 0:
+                print("Even number")
+            else:
+                print("Odd number")
+
+        elif choice == 2:
+            print("Goodbye!")
+            break
+
         else:
-            print("Odd Number")
-    elif choice == 2:
-        print("Goodbyeeee!!!!")
-        break
+            print("Invalid option")
 
-    else:
-        print("Invalid option")
+    except ValueError:
+        print("Please enter a valid number")
 
 
-
-#2. Sum of numbers in a list
-
+# 2. SUM OF NUMBERS IN A LIST (MANUAL METHOD)
 num = [1, 2, 3, 4, 5]
-total = sum(num)
-print(total)
+total = 0
+
+for n in num:
+    total += n
+
+print("Sum:", total)
 
 
-
-#3. Simple Calculator
+# 3. SIMPLE CALCULATOR
 
 def add(a, b):
     return a + b
 
-def sub(c, d):
-    return c - d
+def sub(a, b):
+    return a - b
 
-def mul(e, f):
-    return e * f
+def mul(a, b):
+    return a * b
 
-def div(g, h):
-    return g / h
+def div(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+
 
 while True:
-    print("Simple Calculator")
-    print("What operation do you want to perform")
+    print("\nSIMPLE CALCULATOR")
     print("1. Add")
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
     print("5. Exit")
-    
-    choice = int(input("Select an option: "))
-    if choice == 1:
-        a = int(input("Enter 1st number: "))
-        b = int(input("Enter 2nd number: "))
-        print("Sum: ", add(a, b))
-    elif choice == 2:
-        c =  int(input("Enter 1st number: "))
-        d = int(input("Enter 2nd number: "))
-        print("Difference: ", sub(c, d))
-    elif choice == 3:
-        e = int(input("Enter 1st number: "))
-        f = int(input("Enter 2nd number: "))
-        print("Product: ", mul(e, f))
-    elif choice == 4:
-        g = int(input("Enter 1st number: "))
-        h = int(input("Enter 1st number: "))
-        print("Quotient: ", div(g, h))
-    elif choice == 5:
-        print("Thank you for using my calculator")
-        print("Goodbyyyyeeee!!!")
-        break
-    else:
-        print("Invalid option")
+
+    try:
+        choice = int(input("Select an option: "))
+
+        if choice in [1, 2, 3, 4]:
+            a = float(input("Enter 1st number: "))
+            b = float(input("Enter 2nd number: "))
+
+            if choice == 1:
+                print("Sum:", add(a, b))
+            elif choice == 2:
+                print("Difference:", sub(a, b))
+            elif choice == 3:
+                print("Product:", mul(a, b))
+            elif choice == 4:
+                print("Quotient:", div(a, b))
+
+        elif choice == 5:
+            print("Thank you for using the calculator. Goodbye!")
+            break
+
+        else:
+            print("Invalid option")
+
+    except ValueError:
+        print("Please enter valid numbers")
 
 
-#4. Loop through list to find maximum
-
+# 4. FIND MAXIMUM IN A LIST (MANUAL METHOD)
 li_num = [3, 4, 6, 8]
+max_num = li_num[0]
 
-for i in li_num:
-    max_num = max(li_num)
+for num in li_num:
+    if num > max_num:
+        max_num = num
 
-print("Maximum", max_num)
+print("Maximum:", max_num)
 
-#5. Function that checks prime numbers
 
-def chk_prime(num1):
-    if num1 % 2 == 0:
-        #got stuck here
-    
+# 5. PRIME NUMBER CHECKER
+
+def chk_prime(num):
+    if num <= 1:
+        return "Not Prime"
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return "Not Prime"
+
+    return "Prime"
+
+
+# Example usage
+number = int(input("Enter a number to check if it's prime: "))
+print(chk_prime(number))
