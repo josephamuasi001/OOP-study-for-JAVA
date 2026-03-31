@@ -76,3 +76,7 @@ while True:
         break
     else:
         print("Invalid option")
+
+
+#4. Loop through list to find maximum
+

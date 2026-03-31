@@ -1,10 +1,10 @@
 {
     "Joseph": {
         "password": "$2y$10$.4QF2gA9AK09Yg2DOhYJ..\/of8svOWQX34PSYV1yBPfQoPPRgfoFS",
-        "level": 4,
-        "experience": 160,
-        "games_won": 3,
-        "games_played": 4
+        "level": 5,
+        "experience": 210,
+        "games_won": 4,
+        "games_played": 5
     },
     "Kwame": {
         "password": "$2y$10$URJddZWj29X9jS12sr3rjebRVI.XfyTCU7Lr5WsabrhCLtiWx5Cgq",
