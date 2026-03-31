@@ -702,8 +702,23 @@ elseif ($action === 'game' && $username) {
 
     $lastGuess = end($guesses);
     $hint = '';
+    $closenessHint = '';
     if ($lastGuess && $current > 0) {
         $hint = $lastGuess < $secret ? "Too low! Try higher." : "Too high! Try lower.";
+        
+        // Closeness hint for Hard mode
+        if ($difficulty === 'Hard') {
+            $difference = abs($lastGuess - $secret);
+            if ($difference <= 50) {
+                $closenessHint = "🔥 " . $difference . " away - Very close!";
+            } elseif ($difference <= 150) {
+                $closenessHint = "🌡️ " . $difference . " away - Getting closer!";
+            } elseif ($difference <= 300) {
+                $closenessHint = "❄️ " . $difference . " away - Still far away!";
+            } else {
+                $closenessHint = "🥶 " . $difference . " away - Very far away!";
+            }
+        }
     }
     ?>
     <!DOCTYPE html>
@@ -725,7 +740,7 @@ elseif ($action === 'game' && $username) {
                 padding: 40px;
                 border-radius: 20px;
                 box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                max-width: 500px;
+                max-width: 600px;
                 width: 90%;
             }
             h1 { color: #f5576c; text-align: center; margin-bottom: 20px; }
@@ -748,6 +763,41 @@ elseif ($action === 'game' && $username) {
                 border-radius: 5px;
                 margin: 20px 0;
                 color: #856404;
+            }
+            .closeness-hint {
+                padding: 15px;
+                background: #e8f5e9;
+                border-left: 4px solid #4caf50;
+                border-radius: 5px;
+                margin: 15px 0;
+                color: #2e7d32;
+                font-weight: bold;
+                text-align: center;
+                font-size: 1.1em;
+            }
+            .guessed-numbers {
+                padding: 15px;
+                background: #f3e5f5;
+                border-radius: 10px;
+                margin: 20px 0;
+            }
+            .guessed-numbers strong {
+                display: block;
+                margin-bottom: 10px;
+                color: #6a1b9a;
+            }
+            .guesses-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .guess-badge {
+                background: #ce93d8;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 20px;
+                font-size: 0.9em;
+                font-weight: 600;
             }
             input { 
                 width: 100%;
@@ -788,6 +838,21 @@ elseif ($action === 'game' && $username) {
 
             <?php if ($hint): ?>
                 <div class="hint"><?= $hint ?></div>
+            <?php endif; ?>
+
+            <?php if ($closenessHint): ?>
+                <div class="closeness-hint"><?= $closenessHint ?></div>
+            <?php endif; ?>
+
+            <?php if (!empty($guesses)): ?>
+                <div class="guessed-numbers">
+                    <strong>📋 Your Guesses So Far:</strong>
+                    <div class="guesses-list">
+                        <?php foreach ($guesses as $g): ?>
+                            <div class="guess-badge"><?= $g ?></div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             <?php endif; ?>
 
             <form method="POST">
