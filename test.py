@@ -1,5 +1,4 @@
-#Even/Odd number Investigation
-
+# 1. Even/Odd number Investigation
 while True:
     print("EVEN/ODD NUMBER SIMULATOR")
     print("1.Check number parity")
@@ -20,3 +19,13 @@ while True:
 
     else:
         print("Invalid option")
+
+
+
+#2. Sum of numbers in a list
+
+num = [1, 2, 3, 4, 5]
+total = sum(num)
+print(total)
+
+
