@@ -81,3 +81,6 @@ while True:
 #4. Loop through list to find maximum
 
 li_num = [3, 4, 6, 8]
+
+for i in li_num:
+    print("Maximum",max(li_num))
