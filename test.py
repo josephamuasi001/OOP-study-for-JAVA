@@ -83,4 +83,6 @@ while True:
 li_num = [3, 4, 6, 8]
 
 for i in li_num:
-    print("Maximum",max(li_num))
+    max_num = max(li_num)
+
+print("Maximum", max_num)
