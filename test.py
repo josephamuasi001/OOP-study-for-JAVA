@@ -29,3 +29,50 @@ total = sum(num)
 print(total)
 
 
+
+#3. Simple Calculator
+
+def add(a, b):
+    return a + b
+
+def sub(c, d):
+    return c - d
+
+def mul(e, f):
+    return e * f
+
+def div(g, h):
+    return g / h
+
+while True:
+    print("Simple Calculator")
+    print("What operation do you want to perform")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Exit")
+    
+    choice = int(input("Select an option: "))
+    if choice == 1:
+        a = int(input("Enter 1st number: "))
+        b = int(input("Enter 2nd number: "))
+        print("Sum: ", add(a, b))
+    elif choice == 2:
+        c =  int(input("Enter 1st number: "))
+        d = int(input("Enter 2nd number: "))
+        print("Difference: ", sub(c, d))
+    elif choice == 3:
+        e = int(input("Enter 1st number: "))
+        f = int(input("Enter 2nd number: "))
+        print("Product: ", mul(e, f))
+    elif choice == 4:
+        g = int(input("Enter 1st number: "))
+        h = int(input("Enter 1st number: "))
+        print("Quotient: ", div(g, h))
+    elif choice == 5:
+        print("Thank you for using my calculator")
+        print("Goodbyyyyeeee!!!")
+        break
+    else:
+        print("Invalid option")
