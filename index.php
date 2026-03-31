@@ -872,8 +872,11 @@ elseif ($action === 'results' && $username) {
     $difficulty = $_SESSION['difficulty'] ?? '';
     
     $won = $result === 'win';
-    $game->updateUserStats($username, $won);
+    $userBefore = $game->getUser($username);
+    $xpBefore = $userBefore['experience'] ?? 0;
+    $game->updateUserStats($username, $won, $difficulty, $attempts);
     $user = $game->getUser($username);
+    $xpEarned = $user['experience'] - $xpBefore;
     ?>
     <!DOCTYPE html>
     <html>
