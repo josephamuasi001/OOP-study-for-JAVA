@@ -26,3 +26,5 @@ while True:
         print("Invalid choice. Please try again.")
 
 
+//Just a simple simulation of a mobile money service. In a real application, you would need to implement security measures, error handling, and connect to a backend service to manage transactions and balances.
+// I will be doing a project on mobile money and this is a simple code to simulate the basic functionalities of a mobile money service. You can expand on this code by adding more features such as transaction history, user authentication, and integration with a database to store user information and transaction records.
