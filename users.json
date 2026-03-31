@@ -19,5 +19,271 @@
         "experience": 160,
         "games_won": 3,
         "games_played": 4
+    },
+    "Antic": {
+        "password": "$2y$10$4CfGSR52tEEuWuOn2Vxn7.ZDnwymBg9eF9jMwD7Sjx8qZ\/\/MP65j2",
+        "level": 6,
+        "experience": 260,
+        "games_won": 5,
+        "games_played": 6
+    },
+    "Marcus": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 7,
+        "experience": 310,
+        "games_won": 8,
+        "games_played": 10
+    },
+    "Emma": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 190,
+        "games_won": 3,
+        "games_played": 5
+    },
+    "David": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 8,
+        "experience": 380,
+        "games_won": 10,
+        "games_played": 12
+    },
+    "Sarah": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 140,
+        "games_won": 2,
+        "games_played": 4
+    },
+    "Alex": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 6,
+        "experience": 240,
+        "games_won": 4,
+        "games_played": 6
+    },
+    "Rachel": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 200,
+        "games_won": 3,
+        "games_played": 5
+    },
+    "James": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 7,
+        "experience": 290,
+        "games_won": 6,
+        "games_played": 8
+    },
+    "Lisa": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 3,
+        "experience": 100,
+        "games_won": 1,
+        "games_played": 3
+    },
+    "Michael": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 9,
+        "experience": 420,
+        "games_won": 12,
+        "games_played": 14
+    },
+    "Jessica": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 150,
+        "games_won": 2,
+        "games_played": 4
+    },
+    "Robert": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 6,
+        "experience": 250,
+        "games_won": 5,
+        "games_played": 7
+    },
+    "Amanda": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 220,
+        "games_won": 4,
+        "games_played": 6
+    },
+    "Kevin": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 7,
+        "experience": 300,
+        "games_won": 7,
+        "games_played": 9
+    },
+    "Nicole": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 170,
+        "games_won": 3,
+        "games_played": 5
+    },
+    "Chris": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 8,
+        "experience": 360,
+        "games_won": 9,
+        "games_played": 11
+    },
+    "Stephanie": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 3,
+        "experience": 110,
+        "games_won": 1,
+        "games_played": 3
+    },
+    "Daniel": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 6,
+        "experience": 270,
+        "games_won": 6,
+        "games_played": 8
+    },
+    "Jennifer": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 180,
+        "games_won": 2,
+        "games_played": 4
+    },
+    "Matthew": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 7,
+        "experience": 320,
+        "games_won": 8,
+        "games_played": 10
+    },
+    "Lauren": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 130,
+        "games_won": 2,
+        "games_played": 4
+    },
+    "Brian": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 8,
+        "experience": 340,
+        "games_won": 8,
+        "games_played": 10
+    },
+    "Ashley": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 210,
+        "games_won": 4,
+        "games_played": 6
+    },
+    "Ryan": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 6,
+        "experience": 280,
+        "games_won": 7,
+        "games_played": 9
+    },
+    "Megan": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 3,
+        "experience": 120,
+        "games_won": 1,
+        "games_played": 3
+    },
+    "Jonathan": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 7,
+        "experience": 330,
+        "games_won": 9,
+        "games_played": 11
+    },
+    "Brittany": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 140,
+        "games_won": 2,
+        "games_played": 4
+    },
+    "Andrew": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 8,
+        "experience": 350,
+        "games_won": 9,
+        "games_played": 11
+    },
+    "Christina": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 230,
+        "games_won": 5,
+        "games_played": 7
+    },
+    "Joshua": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 9,
+        "experience": 400,
+        "games_won": 11,
+        "games_played": 13
+    },
+    "Samantha": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 3,
+        "experience": 90,
+        "games_won": 1,
+        "games_played": 3
+    },
+    "Jeffrey": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 6,
+        "experience": 260,
+        "games_won": 5,
+        "games_played": 7
+    },
+    "Angela": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 160,
+        "games_won": 3,
+        "games_played": 5
+    },
+    "William": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 7,
+        "experience": 310,
+        "games_won": 8,
+        "games_played": 10
+    },
+    "Kathryn": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 5,
+        "experience": 200,
+        "games_won": 4,
+        "games_played": 6
+    },
+    "Edward": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 8,
+        "experience": 370,
+        "games_won": 10,
+        "games_played": 12
+    },
+    "Rebecca": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 4,
+        "experience": 150,
+        "games_won": 2,
+        "games_played": 4
+    },
+    "Steven": {
+        "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
+        "level": 6,
+        "experience": 290,
+        "games_won": 6,
+        "games_played": 8
     }
 }
