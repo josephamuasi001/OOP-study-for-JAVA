@@ -74,14 +74,22 @@ class NumberGuessingGame {
         return $users[$username] ?? null;
     }
 
-    public function updateUserStats($username, $won) {
+    public function updateUserStats($username, $won, $difficulty = 'Medium', $attemptsUsed = 1) {
         $users = $this->loadUsers();
         if (!isset($users[$username])) return;
 
         $users[$username]['games_played']++;
+        
         if ($won) {
             $users[$username]['games_won']++;
-            $users[$username]['experience'] += 50;
+            
+            // Calculate experience based on difficulty and attempts
+            $basExp = ['Easy' => 100, 'Medium' => 200, 'Hard' => 300];
+            $baseXP = $basExp[$difficulty] ?? 200;
+            
+            // Decrease XP by 20 for each attempt after the first
+            $experienceGain = max(50, $baseXP - (($attemptsUsed - 1) * 20));
+            $users[$username]['experience'] += $experienceGain;
         } else {
             $users[$username]['experience'] += 10;
         }

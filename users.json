@@ -22,10 +22,10 @@
     },
     "Antic": {
         "password": "$2y$10$4CfGSR52tEEuWuOn2Vxn7.ZDnwymBg9eF9jMwD7Sjx8qZ\/\/MP65j2",
-        "level": 7,
-        "experience": 340,
-        "games_won": 6,
-        "games_played": 10
+        "level": 10,
+        "experience": 460,
+        "games_won": 8,
+        "games_played": 14
     },
     "Marcus": {
         "password": "$2y$10$abcdefghijklmnopqrstuvwxyz123456789abcdefghijklmnopqrst",
