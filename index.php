@@ -706,18 +706,10 @@ elseif ($action === 'game' && $username) {
     if ($lastGuess && $current > 0) {
         $hint = $lastGuess < $secret ? "Too low! Try higher." : "Too high! Try lower.";
         
-        // Closeness hint for Hard mode
-        if ($difficulty === 'Hard') {
-            $difference = abs($lastGuess - $secret);
-            if ($difference <= 50) {
-                $closenessHint = "🔥 " . $difference . " away - Very close!";
-            } elseif ($difference <= 150) {
-                $closenessHint = "🌡️ " . $difference . " away - Getting closer!";
-            } elseif ($difference <= 300) {
-                $closenessHint = "❄️ " . $difference . " away - Still far away!";
-            } else {
-                $closenessHint = "🥶 " . $difference . " away - Very far away!";
-            }
+        // Provide a clue only when user is extremely close (within 10 of the secret)
+        $difference = abs($lastGuess - $secret);
+        if ($difference <= 10 && $difference > 0) {
+            $closenessHint = "🔥 You're extremely close! You're just a few numbers away!";
         }
     }
     ?>
