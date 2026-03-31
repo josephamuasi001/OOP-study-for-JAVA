@@ -86,3 +86,10 @@ for i in li_num:
     max_num = max(li_num)
 
 print("Maximum", max_num)
+
+#5. Function that checks prime numbers
+
+def chk_prime(num1):
+    if num1 % 2 == 0:
+        #got stuck here
+    
