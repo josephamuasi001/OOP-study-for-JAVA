@@ -1,6 +1,6 @@
 
 
-while:
+while True:
     print("MTN MOBILE MONEY")
     print("1. Send Money")
     print("2. Receive Money")
@@ -24,3 +24,5 @@ while:
         break
     else:
         print("Invalid choice. Please try again.")
+
+
