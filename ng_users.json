@@ -1,0 +1,47 @@
+{
+    "Joseph": {
+        "password": "$2y$10$j7ms2BcnMPNKi5Ib94xjJO4Lbz.j3lXDMEjMN1AqRUPJ4BmxMADiK",
+        "level": 1,
+        "experience": 10,
+        "games_won": 0,
+        "games_played": 1,
+        "streak": 0,
+        "best_streak": 0,
+        "hints_used": 0,
+        "hint_xp": 200,
+        "achievements": [],
+        "theme": "default",
+        "dark_mode": false,
+        "powerups": {
+            "range_narrow": 2,
+            "reveal_digit": 1
+        },
+        "game_history": [
+            {
+                "diff": "Medium",
+                "won": false,
+                "attempts": 8,
+                "time": 81,
+                "date": 1775087761
+            }
+        ],
+        "no_hint_games": 0,
+        "created_at": 1775087673,
+        "last_daily": null,
+        "daily_streak": 0,
+        "diff_stats": {
+            "Easy": {
+                "w": 0,
+                "p": 0
+            },
+            "Medium": {
+                "w": 0,
+                "p": 1
+            },
+            "Hard": {
+                "w": 0,
+                "p": 0
+            }
+        }
+    }
+}
