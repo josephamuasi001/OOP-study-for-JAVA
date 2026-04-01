@@ -288,10 +288,10 @@
     },
     "Yaw": {
         "password": "$2y$10$It68hy7aeaxL3ZOYFoC59.IFlA.364bcQcntHeVTuieZL1WbPKMgy",
-        "level": 1,
-        "experience": 30,
-        "games_won": 0,
-        "games_played": 3,
+        "level": 12,
+        "experience": 550,
+        "games_won": 8,
+        "games_played": 13,
         "streak": 0,
         "achievements": []
     }

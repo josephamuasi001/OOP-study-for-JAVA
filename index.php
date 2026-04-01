@@ -953,7 +953,7 @@ elseif ($action === 'results' && $username) {
                 <?php endforeach; ?>
             </div>
 
-            <a href="?action=select">Play Again</a>
+            <a href="?action=select">PlayAgain</a>
             <a href="?action=menu">Back to Menu</a>
         </div>
     </body>
