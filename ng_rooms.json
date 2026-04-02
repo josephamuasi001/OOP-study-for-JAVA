@@ -1,0 +1,26 @@
+{
+    "D4A356": {
+        "code": "D4A356",
+        "host": "Isaac",
+        "difficulty": "Easy",
+        "status": "waiting",
+        "secret": 3,
+        "min": 1,
+        "max": 10,
+        "max_attempts": 5,
+        "max_players": 2,
+        "created_at": 1775090068,
+        "started_at": null,
+        "players": {
+            "Isaac": {
+                "joined": 1775090068,
+                "guesses": [],
+                "attempts": 0,
+                "won": false,
+                "finish_time": null,
+                "ready": true
+            }
+        },
+        "chat": []
+    }
+}

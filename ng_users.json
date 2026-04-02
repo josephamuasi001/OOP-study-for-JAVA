@@ -153,14 +153,14 @@
     },
     "Isaac": {
         "password": "$2y$10$5cbS1G0MbQMgj9mZRtFbL.2dL98mnZHUTu4zpnPwGhCNXSeI2B3XG",
-        "level": 55,
-        "experience": 2736,
-        "games_won": 5,
-        "games_played": 5,
-        "streak": 5,
-        "best_streak": 5,
-        "hints_used": 0,
-        "hint_xp": 2936,
+        "level": 81,
+        "experience": 4011,
+        "games_won": 6,
+        "games_played": 6,
+        "streak": 6,
+        "best_streak": 6,
+        "hints_used": 2,
+        "hint_xp": 4111,
         "achievements": [
             "daily_champion",
             "hard_win",
@@ -170,13 +170,14 @@
             "speed_demon",
             "efficiency",
             "win_streak_5",
-            "level_50"
+            "level_50",
+            "power_player"
         ],
         "theme": "ocean",
         "dark_mode": false,
         "powerups": {
             "range_narrow": 5,
-            "reveal_digit": 2
+            "reveal_digit": 3
         },
         "game_history": [
             {
@@ -213,9 +214,17 @@
                 "attempts": 6,
                 "time": 28,
                 "date": 1775089750
+            },
+            {
+                "diff": "Hard",
+                "won": true,
+                "attempts": 4,
+                "time": 60,
+                "date": 1775090165,
+                "multi": false
             }
         ],
-        "no_hint_games": 5,
+        "no_hint_games": 0,
         "created_at": 1775088970,
         "last_daily": "2026-04-02",
         "daily_streak": 1,
@@ -229,9 +238,12 @@
                 "p": 3
             },
             "Hard": {
-                "w": 1,
-                "p": 1
+                "w": 2,
+                "p": 2
             }
-        }
+        },
+        "coin_doubler_active": false,
+        "coins": 20,
+        "shop_purchases": 1
     }
 }
