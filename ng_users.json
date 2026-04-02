@@ -1,22 +1,23 @@
 {
     "Joseph": {
         "password": "$2y$10$j7ms2BcnMPNKi5Ib94xjJO4Lbz.j3lXDMEjMN1AqRUPJ4BmxMADiK",
-        "level": 15,
-        "experience": 700,
-        "games_won": 3,
-        "games_played": 4,
-        "streak": 3,
-        "best_streak": 3,
+        "level": 20,
+        "experience": 974,
+        "games_won": 4,
+        "games_played": 5,
+        "streak": 4,
+        "best_streak": 4,
         "hints_used": 0,
-        "hint_xp": 890,
+        "hint_xp": 1164,
         "achievements": [
             "first_win",
             "efficiency",
             "win_streak_3",
             "speed_demon",
-            "level_10"
+            "level_10",
+            "daily_champion"
         ],
-        "theme": "default",
+        "theme": "ocean",
         "dark_mode": false,
         "powerups": {
             "range_narrow": 5,
@@ -50,24 +51,159 @@
                 "attempts": 2,
                 "time": 5,
                 "date": 1775087995
+            },
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 7,
+                "time": 61,
+                "date": 1775088512
             }
         ],
-        "no_hint_games": 3,
+        "no_hint_games": 4,
         "created_at": 1775087673,
-        "last_daily": null,
-        "daily_streak": 0,
+        "last_daily": "2026-04-02",
+        "daily_streak": 1,
         "diff_stats": {
             "Easy": {
                 "w": 3,
                 "p": 3
             },
             "Medium": {
-                "w": 0,
-                "p": 1
+                "w": 1,
+                "p": 2
             },
             "Hard": {
                 "w": 0,
                 "p": 0
+            }
+        }
+    },
+    "Kwame": {
+        "password": "$2y$10$F.OOMA64ysiDfukAHIHZcuXqhitqKc59s.4Y3PRuykDgNNGSIirsq",
+        "level": 61,
+        "experience": 3038,
+        "games_won": 4,
+        "games_played": 4,
+        "streak": 4,
+        "best_streak": 4,
+        "hints_used": 0,
+        "hint_xp": 3238,
+        "achievements": [
+            "daily_champion",
+            "hard_win",
+            "level_10",
+            "win_streak_3",
+            "level_50"
+        ],
+        "theme": "volcano",
+        "dark_mode": false,
+        "powerups": {
+            "range_narrow": 5,
+            "reveal_digit": 3
+        },
+        "game_history": [
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 1,
+                "time": 6,
+                "date": 1775088548
+            },
+            {
+                "diff": "Hard",
+                "won": true,
+                "attempts": 6,
+                "time": 34,
+                "date": 1775088592
+            },
+            {
+                "diff": "Hard",
+                "won": true,
+                "attempts": 8,
+                "time": 37,
+                "date": 1775088728
+            },
+            {
+                "diff": "Hard",
+                "won": true,
+                "attempts": 8,
+                "time": 58,
+                "date": 1775088796
+            }
+        ],
+        "no_hint_games": 4,
+        "created_at": 1775088538,
+        "last_daily": "2026-04-02",
+        "daily_streak": 1,
+        "diff_stats": {
+            "Easy": {
+                "w": 0,
+                "p": 0
+            },
+            "Medium": {
+                "w": 1,
+                "p": 1
+            },
+            "Hard": {
+                "w": 3,
+                "p": 3
+            }
+        }
+    },
+    "Isaac": {
+        "password": "$2y$10$5cbS1G0MbQMgj9mZRtFbL.2dL98mnZHUTu4zpnPwGhCNXSeI2B3XG",
+        "level": 30,
+        "experience": 1475,
+        "games_won": 2,
+        "games_played": 2,
+        "streak": 2,
+        "best_streak": 2,
+        "hints_used": 0,
+        "hint_xp": 1675,
+        "achievements": [
+            "daily_champion",
+            "hard_win",
+            "level_10"
+        ],
+        "theme": "ocean",
+        "dark_mode": false,
+        "powerups": {
+            "range_narrow": 4,
+            "reveal_digit": 2
+        },
+        "game_history": [
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 1,
+                "time": 2,
+                "date": 1775088975
+            },
+            {
+                "diff": "Hard",
+                "won": true,
+                "attempts": 6,
+                "time": 39,
+                "date": 1775089020
+            }
+        ],
+        "no_hint_games": 2,
+        "created_at": 1775088970,
+        "last_daily": "2026-04-02",
+        "daily_streak": 1,
+        "diff_stats": {
+            "Easy": {
+                "w": 0,
+                "p": 0
+            },
+            "Medium": {
+                "w": 1,
+                "p": 1
+            },
+            "Hard": {
+                "w": 1,
+                "p": 1
             }
         }
     }
