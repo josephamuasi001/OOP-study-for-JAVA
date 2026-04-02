@@ -1,19 +1,25 @@
 {
     "Joseph": {
         "password": "$2y$10$j7ms2BcnMPNKi5Ib94xjJO4Lbz.j3lXDMEjMN1AqRUPJ4BmxMADiK",
-        "level": 1,
-        "experience": 10,
-        "games_won": 0,
-        "games_played": 1,
-        "streak": 0,
-        "best_streak": 0,
+        "level": 15,
+        "experience": 700,
+        "games_won": 3,
+        "games_played": 4,
+        "streak": 3,
+        "best_streak": 3,
         "hints_used": 0,
-        "hint_xp": 200,
-        "achievements": [],
+        "hint_xp": 890,
+        "achievements": [
+            "first_win",
+            "efficiency",
+            "win_streak_3",
+            "speed_demon",
+            "level_10"
+        ],
         "theme": "default",
         "dark_mode": false,
         "powerups": {
-            "range_narrow": 2,
+            "range_narrow": 5,
             "reveal_digit": 1
         },
         "game_history": [
@@ -23,16 +29,37 @@
                 "attempts": 8,
                 "time": 81,
                 "date": 1775087761
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 3,
+                "time": 19,
+                "date": 1775087951
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 4,
+                "time": 12,
+                "date": 1775087982
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 2,
+                "time": 5,
+                "date": 1775087995
             }
         ],
-        "no_hint_games": 0,
+        "no_hint_games": 3,
         "created_at": 1775087673,
         "last_daily": null,
         "daily_streak": 0,
         "diff_stats": {
             "Easy": {
-                "w": 0,
-                "p": 0
+                "w": 3,
+                "p": 3
             },
             "Medium": {
                 "w": 0,
