@@ -174,7 +174,7 @@
             "power_player"
         ],
         "theme": "ocean",
-        "dark_mode": false,
+        "dark_mode": true,
         "powerups": {
             "range_narrow": 5,
             "reveal_digit": 3
