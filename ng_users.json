@@ -153,23 +153,29 @@
     },
     "Isaac": {
         "password": "$2y$10$5cbS1G0MbQMgj9mZRtFbL.2dL98mnZHUTu4zpnPwGhCNXSeI2B3XG",
-        "level": 30,
-        "experience": 1475,
-        "games_won": 2,
-        "games_played": 2,
-        "streak": 2,
-        "best_streak": 2,
+        "level": 55,
+        "experience": 2736,
+        "games_won": 5,
+        "games_played": 5,
+        "streak": 5,
+        "best_streak": 5,
         "hints_used": 0,
-        "hint_xp": 1675,
+        "hint_xp": 2936,
         "achievements": [
             "daily_champion",
             "hard_win",
-            "level_10"
+            "level_10",
+            "win_streak_3",
+            "one_shot",
+            "speed_demon",
+            "efficiency",
+            "win_streak_5",
+            "level_50"
         ],
         "theme": "ocean",
         "dark_mode": false,
         "powerups": {
-            "range_narrow": 4,
+            "range_narrow": 5,
             "reveal_digit": 2
         },
         "game_history": [
@@ -186,20 +192,41 @@
                 "attempts": 6,
                 "time": 39,
                 "date": 1775089020
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 1,
+                "time": 1,
+                "date": 1775089655
+            },
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 7,
+                "time": 27,
+                "date": 1775089710
+            },
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 6,
+                "time": 28,
+                "date": 1775089750
             }
         ],
-        "no_hint_games": 2,
+        "no_hint_games": 5,
         "created_at": 1775088970,
         "last_daily": "2026-04-02",
         "daily_streak": 1,
         "diff_stats": {
             "Easy": {
-                "w": 0,
-                "p": 0
-            },
-            "Medium": {
                 "w": 1,
                 "p": 1
+            },
+            "Medium": {
+                "w": 3,
+                "p": 3
             },
             "Hard": {
                 "w": 1,
