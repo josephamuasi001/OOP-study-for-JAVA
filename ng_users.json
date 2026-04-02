@@ -1,27 +1,70 @@
 {
     "Joseph": {
         "password": "$2y$10$j7ms2BcnMPNKi5Ib94xjJO4Lbz.j3lXDMEjMN1AqRUPJ4BmxMADiK",
-        "level": 20,
-        "experience": 974,
-        "games_won": 4,
-        "games_played": 5,
-        "streak": 4,
-        "best_streak": 4,
+        "level": 142,
+        "experience": 7056,
+        "games_won": 18,
+        "games_played": 21,
+        "streak": 11,
+        "best_streak": 11,
         "hints_used": 0,
-        "hint_xp": 1164,
+        "hint_xp": 7026,
         "achievements": [
             "first_win",
             "efficiency",
             "win_streak_3",
             "speed_demon",
             "level_10",
-            "daily_champion"
+            "daily_champion",
+            "first_game",
+            "first_easy",
+            "win_5",
+            "streak_3",
+            "streak_5",
+            "max_attempt_win",
+            "no_hint_win",
+            "no_powerup_win",
+            "level_5",
+            "xp_1000",
+            "unlock_ocean",
+            "unlock_forest",
+            "unlock_volcano",
+            "play_light_mode",
+            "hint_xp_1000",
+            "seasonal_spring",
+            "prime_win",
+            "level_25",
+            "level_50",
+            "unlock_galaxy",
+            "unlock_gold",
+            "all_themes",
+            "speed_10s",
+            "win_by_1",
+            "coins_100",
+            "level_75",
+            "play_10",
+            "min_1_win",
+            "win_10",
+            "easy_win_10",
+            "level_100",
+            "no_hint_10",
+            "lucky_number",
+            "first_medium",
+            "winrate_80",
+            "streak_10",
+            "shop_1",
+            "max_stock",
+            "broke"
         ],
         "theme": "ocean",
         "dark_mode": false,
         "powerups": {
             "range_narrow": 5,
-            "reveal_digit": 1
+            "reveal_digit": 1,
+            "xp_surge": 3,
+            "hot_cold_oracle": 1,
+            "extra_attempt": 1,
+            "mistake_shield": 1
         },
         "game_history": [
             {
@@ -58,6 +101,150 @@
                 "attempts": 7,
                 "time": 61,
                 "date": 1775088512
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 5,
+                "time": 12,
+                "date": 1775148736,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 4,
+                "time": 10,
+                "date": 1775148753,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 3,
+                "time": 8,
+                "date": 1775148773,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Medium",
+                "won": false,
+                "attempts": 7,
+                "time": 32,
+                "date": 1775148824,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": false,
+                "attempts": 5,
+                "time": 10,
+                "date": 1775149173,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 3,
+                "time": 17,
+                "date": 1775149198,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 4,
+                "time": 10,
+                "date": 1775149213,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 4,
+                "time": 8,
+                "date": 1775149226,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 4,
+                "time": 8,
+                "date": 1775160135,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 3,
+                "time": 9,
+                "date": 1775160160,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 4,
+                "time": 10,
+                "date": 1775160175,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 3,
+                "time": 5,
+                "date": 1775160216,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 2,
+                "time": 5,
+                "date": 1775160233,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 3,
+                "time": 9,
+                "date": 1775160249,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 5,
+                "time": 21,
+                "date": 1775160275,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 5,
+                "time": 13,
+                "date": 1775160304,
+                "multi": false,
+                "daily": false
             }
         ],
         "no_hint_games": 4,
@@ -66,18 +253,36 @@
         "daily_streak": 1,
         "diff_stats": {
             "Easy": {
-                "w": 3,
-                "p": 3
+                "w": 16,
+                "p": 17
             },
             "Medium": {
-                "w": 1,
-                "p": 2
+                "w": 2,
+                "p": 4
             },
             "Hard": {
                 "w": 0,
                 "p": 0
             }
-        }
+        },
+        "login_count": 3,
+        "last_login": "2026-04-02",
+        "coins": 0,
+        "last_session_date": "2026-04-02",
+        "session_wins_today": 14,
+        "consecutive_losses": 0,
+        "coin_doubler_active": false,
+        "xp_surge_active": false,
+        "clutch_count": 2,
+        "no_hint_wins": 14,
+        "no_powerup_wins": 14,
+        "fast_wins_10s": 7,
+        "efficiency_count": 6,
+        "games_lost": 2,
+        "max_losing_streak": 2,
+        "rooms_hosted": 1,
+        "coins_spent": 368,
+        "shop_purchases": 6
     },
     "Kwame": {
         "password": "$2y$10$F.OOMA64ysiDfukAHIHZcuXqhitqKc59s.4Y3PRuykDgNNGSIirsq",
@@ -149,18 +354,24 @@
                 "w": 3,
                 "p": 3
             }
-        }
+        },
+        "login_count": 2,
+        "last_login": "2026-04-02",
+        "coins": 50,
+        "rooms_joined": 1,
+        "chat_messages": 1,
+        "rooms_hosted": 1
     },
     "Isaac": {
         "password": "$2y$10$5cbS1G0MbQMgj9mZRtFbL.2dL98mnZHUTu4zpnPwGhCNXSeI2B3XG",
-        "level": 81,
-        "experience": 4011,
-        "games_won": 6,
-        "games_played": 6,
-        "streak": 6,
-        "best_streak": 6,
+        "level": 158,
+        "experience": 7897,
+        "games_won": 8,
+        "games_played": 9,
+        "streak": 0,
+        "best_streak": 8,
         "hints_used": 2,
-        "hint_xp": 4111,
+        "hint_xp": 7737,
         "achievements": [
             "daily_champion",
             "hard_win",
@@ -171,13 +382,46 @@
             "efficiency",
             "win_streak_5",
             "level_50",
-            "power_player"
+            "power_player",
+            "first_game",
+            "first_win",
+            "first_medium",
+            "win_5",
+            "streak_3",
+            "streak_5",
+            "speed_10s",
+            "speed_5s",
+            "one_shot_medium",
+            "perfect_game",
+            "no_hint_win",
+            "no_powerup_win",
+            "level_5",
+            "level_25",
+            "level_75",
+            "xp_1000",
+            "morning_game",
+            "unlock_ocean",
+            "unlock_forest",
+            "unlock_volcano",
+            "unlock_galaxy",
+            "unlock_gold",
+            "all_themes",
+            "play_light_mode",
+            "hint_xp_1000",
+            "seasonal_spring",
+            "first_easy",
+            "level_100",
+            "shop_1",
+            "first_powerup",
+            "theme_changer"
         ],
-        "theme": "ocean",
-        "dark_mode": true,
+        "theme": "forest",
+        "dark_mode": false,
         "powerups": {
-            "range_narrow": 5,
-            "reveal_digit": 3
+            "range_narrow": 4,
+            "reveal_digit": 3,
+            "freeze_timer": 0,
+            "range_bomb": 0
         },
         "game_history": [
             {
@@ -222,6 +466,33 @@
                 "time": 60,
                 "date": 1775090165,
                 "multi": false
+            },
+            {
+                "diff": "Medium",
+                "won": true,
+                "attempts": 1,
+                "time": 3,
+                "date": 1775091615,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Easy",
+                "won": true,
+                "attempts": 2,
+                "time": 5,
+                "date": 1775091665,
+                "multi": false,
+                "daily": false
+            },
+            {
+                "diff": "Medium",
+                "won": false,
+                "attempts": 7,
+                "time": 58,
+                "date": 1775092586,
+                "multi": false,
+                "daily": false
             }
         ],
         "no_hint_games": 0,
@@ -230,12 +501,12 @@
         "daily_streak": 1,
         "diff_stats": {
             "Easy": {
-                "w": 1,
-                "p": 1
+                "w": 2,
+                "p": 2
             },
             "Medium": {
-                "w": 3,
-                "p": 3
+                "w": 4,
+                "p": 5
             },
             "Hard": {
                 "w": 2,
@@ -243,7 +514,24 @@
             }
         },
         "coin_doubler_active": false,
-        "coins": 20,
-        "shop_purchases": 1
+        "coins": 23,
+        "shop_purchases": 3,
+        "theme_changes": 3,
+        "last_session_date": "2026-04-02",
+        "session_wins_today": 2,
+        "consecutive_losses": 1,
+        "xp_surge_active": false,
+        "fast_wins_10s": 2,
+        "one_shot_count": 1,
+        "efficiency_count": 2,
+        "no_hint_wins": 2,
+        "no_powerup_wins": 2,
+        "coins_spent": 70,
+        "games_lost": 1,
+        "max_losing_streak": 1,
+        "powerups_used": 1,
+        "powerup_type_used": [
+            "range_bomb"
+        ]
     }
 }
